@@ -29,9 +29,12 @@ $(function () {
       $('.time-block').each(function() {
         let timeBlock = parseInt($(this).attr('id').split('-')[1])
         if(currentTime > timeBlock) {
+          $(this).removeClass('present');
+          $(this).removeClass('future');
           $(this).addClass('past');
         } else if (currentTime === timeBlock) {
           $(this).removeClass('past');
+          $(this).removeClass('future');
           $(this).addClass('present');
         } else {
           $(this).removeClass('past');
